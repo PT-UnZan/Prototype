@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Role list</h1>
+    <ol id="ol-1">
+        <li><select name="" id="" disabled><option value="">King</option></select></li>
+        <li><select name="" id="" disabled><option value="">Mastermind/Cult Leader</option></select></li>
+        <li><select name="" id="" disabled><option value="">Sheriff/Paladin</option></select></li>
+    </ol>
+
+    <h1>The random poll of BD</h1>
+    <ol id="ol-2">
+    </ol>
+
+    <h1>The random poll of Neutral</h1>
+    <ol id="ol-3">
+    </ol>
+</body>
+
+
+<script>
+    var selectOfRandom = [
+        "random BD",
+        "random Neutral"
+    ];
+    var randomBD = [
+        "Butler",
+        "Chronomancer",
+        "CourtWizard",
+        "Drunk",
+        "Hunter",
+        "Knight",
+        "Maid",
+        "Mystic",
+        "Noble",
+        "Observer",
+        "Paladin/Sheriff",
+        "Physician",
+        "Prince",
+        "Princess"
+    ];
+
+    var randomNeutral = [
+        "Inquisitor",
+        "Possessor",
+        "Reaper",
+        "Sorcerer",
+        "Alchemist",
+        "Fool",
+        "Mercenary",
+        "Pretender",
+        "Scorned",
+        "Sellsword"
+    ];
+    var string = "";
+    for (var i = 0; i <selectOfRandom.length; i++){
+        string+='<option value="">'+ selectOfRandom[i] +'</option>';
+    
+    }
+
+    for (var i = 0; i < randomBD.length; i++){
+        string+='<option value="">'+ randomBD[i] +'</option>';
+    
+    }
+
+    for (var i = 0; i < randomNeutral.length ; i++){
+        string+='<option value="">'+ randomNeutral[i] +'</option>';
+    
+    }
+    var htmlOption = '<li><select name="" id="">'+ string +'</select></li>';
+
+    document.querySelector("#ol-1").innerHTML+= htmlOption.repeat(13);
+
+    var string2 = "";
+    for (var i = 0; i < randomBD.length; i++){
+        string2+='<li><input type="checkbox" checked name="" id="">'+randomBD[i]+'</li>';
+    }
+    document.querySelector("#ol-2").innerHTML+= string2;
+
+
+    var string3 = "";
+    for (var i = 0; i < randomNeutral.length; i++){
+        string3+='<li><input type="checkbox" checked name="" id="">'+randomNeutral[i]+'</li>';
+    }
+    document.querySelector("#ol-3").innerHTML+= string3;
+
+</script>
+</html>
